@@ -17,7 +17,7 @@ Requirements
 Installation
 ============
 
-CocoaPods
+<a href="https://cocoapods.org/pods/ViewControllerDescribable">CocoaPods</a>
 
     pod 'ViewControllerDescribable'
     
