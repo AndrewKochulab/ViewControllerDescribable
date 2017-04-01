@@ -26,35 +26,35 @@ And after in terminal run command
     pod install
 
 In your project create an enumeration like this:
-
-    extension UIStoryboard {
-       enum Name: String, StoryboardNameDescribable {
-           case main = "Main",
-           profile = "Profile"
-       }
-    }
-
+```swift
+extension UIStoryboard {
+   enum Name: String, StoryboardNameDescribable {
+       case main = "Main",
+       profile = "Profile"
+   }
+}
+```
 Usage
 =====
 
 Describe your view controller like this:
+```swift
+import ViewControllerDescribable
 
-    import ViewControllerDescribable
-
-    extension SecondViewController: ViewControllerDescribable {
-       static var storyboardName: StoryboardNameDescribable {
-           return UIStoryboard.Name.profile
-       }
-    }
-
+extension SecondViewController: ViewControllerDescribable {
+   static var storyboardName: StoryboardNameDescribable {
+       return UIStoryboard.Name.profile
+   }
+}
+```
 And after push or present from view controller you have:
+```swift
+navigationController?.push(SecondViewController.self, configuration: { vc in
+   vc.firstName = "Hello"
+})
 
-    navigationController?.push(SecondViewController.self, configuration: { vc in
-       vc.firstName = "Hello"
-    })
-    
-    present(ThirdViewController.self)
-
+present(ThirdViewController.self)
+```
 Example
 =======
 
