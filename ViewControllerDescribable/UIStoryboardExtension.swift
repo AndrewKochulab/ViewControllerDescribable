@@ -8,13 +8,12 @@
 
 import UIKit
 
-extension UIStoryboard {
-    public enum Name: String {
-        case main = "Main",
-        launchScreen = "LaunchScreen"
-    }
-    
-    static public func initialized(with name: Name) -> UIStoryboard {
+public protocol StoryboardNameDescribable {
+    var rawValue: String { get }
+}
+
+public extension UIStoryboard {
+    static func initialized(with name: StoryboardNameDescribable) -> UIStoryboard {
         return UIStoryboard(name: name.rawValue, bundle: nil)
     }
 }

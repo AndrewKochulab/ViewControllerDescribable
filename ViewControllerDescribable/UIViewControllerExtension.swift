@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     // MARK: - Presentation
     func present<ViewController: UIViewController>(_ controllerDetails: ViewController.Type,
                  navigationEnabled: Bool = false,

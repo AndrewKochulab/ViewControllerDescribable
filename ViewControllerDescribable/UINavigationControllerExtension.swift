@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UINavigationController {
+public extension UINavigationController {
     // MARK - Push
     func push<ViewController: UIViewController>(_ controllerDetails: ViewController.Type,
               animated: Bool = true,
