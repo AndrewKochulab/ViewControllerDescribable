@@ -9,6 +9,6 @@ Pod::Spec.new do |spec|
 
   spec.platform = :ios, "8.0"
   spec.requires_arc = true
-  spec.source = { git: "https://github.com/AndrewKochulab/ViewControllerDescribable.git", tag: "v#{spec.version}", submodules: false }
+  spec.source = { git: "https://github.com/AndrewKochulab/ViewControllerDescribable.git", tag: "master", submodules: false }
   spec.source_files = "ViewControllerDescribable/**/*.{h,swift}"
 end
