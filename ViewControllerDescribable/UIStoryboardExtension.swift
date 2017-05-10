@@ -13,7 +13,7 @@ public protocol StoryboardNameDescribable {
 }
 
 public extension UIStoryboard {
-    static func initialized(with name: StoryboardNameDescribable) -> UIStoryboard {
-        return UIStoryboard(name: name.rawValue, bundle: nil)
+    convenience init(name: StoryboardNameDescribable) {
+        self.init(name: name.rawValue, bundle: nil)
     }
 }

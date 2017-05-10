@@ -17,7 +17,7 @@ public extension UIViewController {
                  completion: ((_ viewController: ViewController) -> Void)? = nil) where ViewController: ViewControllerDescribable {
         if navigationEnabled {
             guard let navigationControllerId = controllerDetails.navigationControllerId,
-                let navigationController = UIStoryboard.initialized(with: controllerDetails.storyboardName).instantiateViewController(withIdentifier: navigationControllerId) as? UINavigationController,
+                let navigationController = UIStoryboard(name: controllerDetails.storyboardName).instantiateViewController(withIdentifier: navigationControllerId) as? UINavigationController,
                 let viewController = navigationController.viewControllers.first as? ViewController else {
                     return
             }
@@ -28,7 +28,7 @@ public extension UIViewController {
                 completion?(viewController)
             })
         } else {
-            guard let viewController = UIStoryboard.initialized(with: controllerDetails.storyboardName).instantiateViewController(withIdentifier: controllerDetails.viewControllerId) as? ViewController else {
+            guard let viewController = UIStoryboard(name: controllerDetails.storyboardName).instantiateViewController(withIdentifier: controllerDetails.viewControllerId) as? ViewController else {
                 return
             }
             

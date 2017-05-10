@@ -24,7 +24,7 @@ extension ViewControllerDescribable where Self: UIViewController {
     }
     
     static public func instantiated(configuration: ((_ viewController: Self) -> Void)? = nil) -> Self {
-        let viewController = UIStoryboard.initialized(with: Self.storyboardName).instantiateViewController(withIdentifier: Self.viewControllerId) as! Self
+        let viewController = UIStoryboard(name: Self.storyboardName).instantiateViewController(withIdentifier: Self.viewControllerId) as! Self
         
         configuration?(viewController)
         
