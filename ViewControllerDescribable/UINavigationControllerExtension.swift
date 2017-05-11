@@ -13,7 +13,7 @@ public extension UINavigationController {
     func push<ViewController: UIViewController>(_ controllerDetails: ViewController.Type,
               animated: Bool = true,
               configuration: ((_ viewController: ViewController) -> Void)? = nil) where ViewController: ViewControllerDescribable {
-        guard let viewController = UIStoryboard.initialized(with: controllerDetails.storyboardName).instantiateViewController(withIdentifier: controllerDetails.viewControllerId) as? ViewController else {
+        guard let viewController = UIStoryboard(name: controllerDetails.storyboardName).instantiateViewController(withIdentifier: controllerDetails.viewControllerId) as? ViewController else {
             return
         }
         
