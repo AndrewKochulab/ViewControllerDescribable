@@ -30,4 +30,16 @@ extension ViewControllerDescribable where Self: UIViewController {
         
         return viewController
     }
+    
+    static public func instantiatedNavigation(configuration: ((_ viewController: Self) -> Void)? = nil) -> UINavigationController? {
+        guard let navigationControllerId = Self.navigationControllerId,
+            let navigationController = UIStoryboard(name: Self.storyboardName).instantiateViewController(withIdentifier: navigationControllerId) as? UINavigationController,
+            let viewController = navigationController.viewControllers.first as? Self else {
+                return nil
+        }
+        
+        configuration?(viewController)
+        
+        return navigationController
+    }
 }
