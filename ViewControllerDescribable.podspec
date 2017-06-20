@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "ViewControllerDescribable"
-  spec.version = "1.0.1"
+  spec.version = "1.0.2"
   spec.summary = "A simple way to switch between controllers."
   spec.homepage = "https://github.com/AndrewKochulab/ViewControllerDescribable"
   spec.license = { type: 'MIT', file: 'LICENSE' }
